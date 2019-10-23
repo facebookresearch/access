@@ -38,8 +38,6 @@ def check_dataset(dataset):
 def prepare_exp_dir():
     exp_dir = get_fairseq_exp_dir()
     if exp_dir.exists():
-        # Remove exp dir to prevent conflicts with requeue and non deterministic args
-        # https://github.com/fairinternal/dfoptim/issues/126 #private
         shutil.rmtree(exp_dir)
     exp_dir.mkdir(parents=True)
     return exp_dir
