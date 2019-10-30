@@ -4,7 +4,7 @@ GitPython==3.0.2
 imohash==1.0.4
 joblib==0.13.2
 nevergrad==0.2.3
-nltk==3.4.3
+nltk==3.4.5
 numpy==1.17.2
 pandas==0.25.1
 sentencepiece==0.1.83
