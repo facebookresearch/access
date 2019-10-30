@@ -8,7 +8,7 @@
 import fileinput
 
 from access.preprocessors import get_preprocessors
-from access.resources.prepare import prepare_best_model
+from access.resources.prepare import prepare_models
 from access.simplifiers import get_fairseq_simplifier, get_preprocessed_simplifier
 from access.text import word_tokenize
 from access.utils.helpers import yield_lines, write_lines, get_temp_filepath, mute
@@ -20,7 +20,7 @@ if __name__ == '__main__':
     source_filepath = get_temp_filepath()
     write_lines([word_tokenize(line) for line in fileinput.input()], source_filepath)
     # Load best model
-    best_model_dir = prepare_best_model()
+    best_model_dir = prepare_models()
     recommended_preprocessors_kwargs = {
         'LengthRatioPreprocessor': {'target_ratio': 0.95},
         'LevenshteinPreprocessor': {'target_ratio': 0.75},

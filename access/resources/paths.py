@@ -14,7 +14,8 @@ RESOURCES_DIR = REPO_DIR / 'resources'
 DATASETS_DIR = RESOURCES_DIR / 'datasets'
 VARIOUS_DIR = RESOURCES_DIR / 'various'
 FASTTEXT_EMBEDDINGS_PATH = VARIOUS_DIR / 'fasttext-vectors/wiki.en.vec'
-BEST_MODEL_DIR = RESOURCES_DIR / 'best_model'
+MODELS_DIR = RESOURCES_DIR / 'models'
+BEST_MODEL_DIR = MODELS_DIR / 'best_model'
 
 LANGUAGES = ['complex', 'simple']
 PHASES = ['train', 'valid', 'test']

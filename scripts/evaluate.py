@@ -7,14 +7,14 @@
 
 from access.evaluation.general import evaluate_simplifier_on_turkcorpus
 from access.preprocessors import get_preprocessors
-from access.resources.prepare import prepare_turkcorpus, prepare_best_model
+from access.resources.prepare import prepare_turkcorpus, prepare_models
 from access.simplifiers import get_fairseq_simplifier, get_preprocessed_simplifier
 
 
 if __name__ == '__main__':
     print('Evaluating pretrained model')
     prepare_turkcorpus()
-    best_model_dir = prepare_best_model()
+    best_model_dir = prepare_models()
     recommended_preprocessors_kwargs = {
         'LengthRatioPreprocessor': {'target_ratio': 0.95},
         'LevenshteinPreprocessor': {'target_ratio': 0.75},

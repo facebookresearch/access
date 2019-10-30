@@ -18,7 +18,8 @@ from access.utils.helpers import (yield_lines_in_parallel, write_lines_in_parall
                                   lock_directory)
 from access.preprocess import replace_lrb_rrb, replace_lrb_rrb_file, normalize_quotes
 from access.resources.utils import download_and_extract, add_newline_at_end_of_file, git_clone
-from access.resources.paths import FASTTEXT_EMBEDDINGS_PATH, get_dataset_dir, get_data_filepath, PHASES, BEST_MODEL_DIR
+from access.resources.paths import (FASTTEXT_EMBEDDINGS_PATH, get_dataset_dir, get_data_filepath, PHASES, MODELS_DIR,
+                                    BEST_MODEL_DIR)
 
 
 def prepare_wikilarge():
@@ -127,9 +128,15 @@ def prepare_fasttext_embeddings():
         shutil.move(extracted_path, FASTTEXT_EMBEDDINGS_PATH)
 
 
-def prepare_best_model():
+def prepare_models():
+    MODELS_DIR.mkdir(parents=True, exist_ok=True)
     if not BEST_MODEL_DIR.exists():
         url = 'http://dl.fbaipublicfiles.com/access/best_model.tar.gz'
         extracted_path = download_and_extract(url)[0]
         shutil.move(extracted_path, BEST_MODEL_DIR)
+    all_parameters_model_dir = MODELS_DIR / 'all_parameters_model'
+    if not all_parameters_model_dir.exists():
+        url = 'http://dl.fbaipublicfiles.com/access/all_parameters_model.tar.gz'
+        extracted_path = download_and_extract(url)[0]
+        shutil.move(extracted_path, all_parameters_model_dir)
     return BEST_MODEL_DIR
