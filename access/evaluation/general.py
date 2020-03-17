@@ -25,13 +25,7 @@ def evaluate_simplifier_on_turkcorpus(simplifier, phase):
     pred_filepath = get_prediction_on_turkcorpus(simplifier, phase)
     pred_filepath = lowercase_file(pred_filepath)
     pred_filepath = to_lrb_rrb_file(pred_filepath)
-    if phase == 'test':
-        return evaluate_system_output('turk',
-                                      sys_sents_path=pred_filepath,
-                                      metrics='bleu,sari,fkgl',
-                                      quality_estimation=True)
-    elif phase == 'valid':
-        return evaluate_system_output('turk_valid',
-                                      sys_sents_path=pred_filepath,
-                                      metrics='bleu,sari,fkgl',
-                                      quality_estimation=True)
+    return evaluate_system_output(f'turkcorpus_{phase}_legacy',
+                                  sys_sents_path=pred_filepath,
+                                  metrics='bleu,sari_legacy,fkgl',
+                                  quality_estimation=True)

@@ -24,4 +24,4 @@ if __name__ == '__main__':
     preprocessors = get_preprocessors(recommended_preprocessors_kwargs)
     simplifier = get_fairseq_simplifier(best_model_dir, beam=8)
     simplifier = get_preprocessed_simplifier(simplifier, preprocessors=preprocessors)
-    evaluate_simplifier_on_turkcorpus(simplifier, phase='test')
+    print(evaluate_simplifier_on_turkcorpus(simplifier, phase='test'))
