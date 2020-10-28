@@ -19,6 +19,9 @@ cd access
 pip install -e .
 pip install --force-reinstall easse@git+git://github.com/feralvam/easse.git@580ec953e4742c3ae806cc85d867c16e9f584505
 pip install --force-reinstall fairseq@git+https://github.com/louismartin/fairseq.git@controllable-sentence-simplification
+
+pip install torch==1.2
+pip install sacrebleu==1.3.7
 ```
 
 ### How to use
