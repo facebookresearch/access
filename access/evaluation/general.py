@@ -27,5 +27,5 @@ def evaluate_simplifier_on_turkcorpus(simplifier, phase):
     pred_filepath = to_lrb_rrb_file(pred_filepath)
     return evaluate_system_output(f'turkcorpus_{phase}_legacy',
                                   sys_sents_path=pred_filepath,
-                                  metrics='bleu,sari_legacy,fkgl',
+                                  metrics=['bleu', 'sari_legacy', 'fkgl'],
                                   quality_estimation=True)

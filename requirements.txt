@@ -4,13 +4,13 @@ GitPython==3.1.0
 imohash==1.0.4
 joblib==0.13.2
 nevergrad==0.2.3
-nltk==3.4.5
+nltk
 numpy==1.17.2
 pandas==0.25.1
-sentencepiece==0.1.83
+sentencepiece==0.1.86
 spacy==2.1.3
 tabulate==0.8.4
-torch==1.2.0
+torch==1.4.0
 tqdm==4.36.1
-easse@git+git://github.com/feralvam/easse.git@090855e73dee5e26ea0cda01d4aa4f51044d9af9
+easse@git+git://github.com/feralvam/easse.git@580bba7e1378fc8289c663f864e0487188fe8067
 fairseq@git+https://github.com/louismartin/fairseq.git@controllable-sentence-simplification
