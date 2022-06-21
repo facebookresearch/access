@@ -5,7 +5,7 @@ imohash==1.0.4
 joblib==0.13.2
 nevergrad==0.2.3
 nltk
-numpy==1.17.2
+numpy==1.22.0
 pandas==0.25.1
 sentencepiece==0.1.86
 spacy==2.1.3
